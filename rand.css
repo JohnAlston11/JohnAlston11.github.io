@@ -1,0 +1,37 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 32px;
+  width: 21em;
+  margin: 0 auto;
+  padding: 0.5em 0;
+
+  height: 100vh;
+
+  font-family: monospace;
+  background-color: forestgreen;
+  text-align: center;
+}
+
+#aList{
+    
+    list-style: none
+    
+}
+
+
+#choice{
+    font-size: 50px;
+}
+
+button {
+  font-size: 15px;
+  font-family: monospace;
+}
+
+img {
+  max-width: 90%;
+}
