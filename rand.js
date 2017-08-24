@@ -32,6 +32,20 @@ var colors = [
 ];
 var cur = 0;
 
+function randomNoRepeats(array) {
+    var copy = array.slice(0);
+    return function() {  //annonymous function
+     // if (copy.length < 1) { copy = array.slice(0); }
+      var index = Math.floor(Math.random() * copy.length);
+      var item = copy[index];
+      copy.splice(index, 1);
+      return item;
+    };
+  }
+
+let chooser = randomNoRepeats(students)
+
+
 document.addEventListener('DOMContentLoaded', () => {
   console.log('hello rand.js');
 
@@ -54,12 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 var pickOnClick = function (event) {
   choice.innerHTML = '&nbsp;'
-  var rand = students[Math.floor(Math.random() * students.length)];
+  let pickName = chooser();
   var x = window.setInterval(() => {
     if (colors[cur] === undefined) {
       window.clearInterval(x);
       cur = 0;
-      choice.innerText = rand;
+      choice.innerText = pickName;
       return;
     }
     if (colors[cur]) header.style.color = colors[cur];
