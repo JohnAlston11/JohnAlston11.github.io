@@ -3,6 +3,7 @@ var header;
 var body;
 var choice;
 var aList;
+var clickButton;
 
 var students = [
   "Kevin",
@@ -32,19 +33,18 @@ var colors = [
 ];
 var cur = 0;
 
-function randomNoRepeats(array) {
-    var copy = array.slice(0);
-    return function() {  //annonymous function
-     // if (copy.length < 1) { copy = array.slice(0); }
-      var index = Math.floor(Math.random() * copy.length);
-      var item = copy[index];
-      copy.splice(index, 1);
-      return item;
-    };
-  }
-
-let chooser = randomNoRepeats(students)
-
+//function randomNoRepeats(array) {
+//    var copy = array.slice(0); // make copy of students array so no harm to original 
+//    return function() {  //annonymous function
+//     // if (copy.length < 1) { copy = array.slice(0); }
+//       var index = Math.floor(Math.random() * copy.length);
+//      var item = copy[index];
+//      copy.splice(index, 1);
+//      return item;
+//    };
+//  }
+//
+//let chooser = randomNoRepeats(students)
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('hello rand.js');
@@ -54,9 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
   pickButton = document.getElementById('pickButton');
   choice = document.getElementById('choice');
   aList = document.getElementById('aList');
+  clickButton = document.getElementById('clickButton');
 
   pickButton.addEventListener('click', pickOnClick );
   aList.addEventListener('click', aListOnClick );
+  clickButton.addEventListener('click', clickPick);    
 
   // build the attendance list
   for (let i=0; i<students.length; i++) {
@@ -66,14 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
 var pickOnClick = function (event) {
   choice.innerHTML = '&nbsp;'
-  let pickName = chooser();
+
+ //   let pickName = chooser();
+       
+    var rand = students.splice(Math.floor(Math.random() * students.length), 1);
+    
+    
   var x = window.setInterval(() => {
     if (colors[cur] === undefined) {
       window.clearInterval(x);
       cur = 0;
-      choice.innerText = pickName;
+      choice.innerText = rand;
       return;
     }
     if (colors[cur]) header.style.color = colors[cur];
@@ -87,3 +95,9 @@ var aListOnClick = function (event) {
     event.target.style.textDecoration = 'line-through';
   }
 }
+
+var clickPick = function(event){
+    
+    alert("Hey, what's up?");
+}
+
