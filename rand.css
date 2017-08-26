@@ -12,29 +12,56 @@ body {
   height: 100vh;
 
   font-family: monospace;
-  background-color: darkblue;
+  background-color: yellow;
   text-align: center;
+  color: rgb(0,150,255);
 }
 
 #aList{
-    background-color: lightblue;
     list-style: none;
-}
-
-#aList{
-    text-decoration-color: darkblue
 }
 
 
 #choice{
     font-size: 50px;
+    text-transform: uppercase;
 }
 
-button {
+#pickButton {
   font-size: 15px;
   font-family: monospace;
+  background-color: black;
+  color: white;
+}
+
+#clickButton {
+    font-family: cursive;
+    font-size: 15px;
+    text-decoration-color: white;
+    background-color: black;
+    color: #fff;
+}
+
+#duoButton {
+    font-size: 15px;
+    font-family: fantasy;
+    background-color: black;
+    color: white;
+}
+
+#duoButton:hover{
+    color: aqua;
+    background-color: brown;
+}
+
+#titleButton {
+    font-size: 15px;
+    font-family: fantasy;
+    background-color: black;
+    color: white
 }
 
 img {
   max-width: 90%;
+  border-radius: 100%;
 }
