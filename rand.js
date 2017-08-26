@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   pickButton.addEventListener('click', pickOnClick );
   aList.addEventListener('click', aListOnClick );
-  clickButton.addEventListener('click', clickPick);    
+  clickButton.addEventListener('click', clickOnPick);    
 
   // build the attendance list
   for (let i=0; i<students.length; i++) {
@@ -96,7 +96,7 @@ var aListOnClick = function (event) {
   }
 }
 
-var clickPick = function(event){
+var clickOnPick = function(event){
     
     alert("Hey, what's up?");
 }

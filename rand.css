@@ -12,14 +12,17 @@ body {
   height: 100vh;
 
   font-family: monospace;
-  background-color: forestgreen;
+  background-color: darkblue;
   text-align: center;
 }
 
 #aList{
-    
-    list-style: none
-    
+    background-color: lightblue;
+    list-style: none;
+}
+
+#aList{
+    text-decoration-color: darkblue
 }
 
 
